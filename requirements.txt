@@ -1,0 +1,3 @@
+huaweicloudsdkcore
+huaweicloudsdkworkspace
+python-dotenv
