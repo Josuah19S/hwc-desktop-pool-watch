@@ -1,4 +1,8 @@
-"""Configuración, cliente del SDK y búsqueda del pool, compartidos por los scripts."""
+"""
+common.py
+Configuración, cliente del SDK y búsqueda del pool, compartidos por los scripts.
+python scripts/common.py
+"""
 
 import os
 import sys
@@ -9,11 +13,11 @@ from huaweicloudsdkcore.auth.credentials import BasicCredentials
 from huaweicloudsdkworkspace.v2 import ListDesktopPoolsRequest, WorkspaceClient
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_ENDPOINT = "https://workspace.la-south-2.myhuaweicloud.com"  # no verificado
+DEFAULT_ENDPOINT = "https://workspace.la-south-2.myhuaweicloud.com"  # Verificado para LA-Santiago
 
 
 def fail(msg):
-  """Termina el programa con un mensaje en español, sin traza."""
+  """Termina el programa sin traza."""
   print(f"ERROR: {msg}", file=sys.stderr)
   sys.exit(1)
 

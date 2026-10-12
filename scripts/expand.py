@@ -1,4 +1,8 @@
-"""Expande manualmente el desktop pool (genera costo)."""
+"""
+expand.py
+Expande manualmente el desktop pool (genera costo).
+python scripts/expand.py --size <num_desktops>
+"""
 
 import argparse
 import time
@@ -42,7 +46,7 @@ def wait_job(client, job_id, poll_seconds):
 def main():
   parser = argparse.ArgumentParser(description="Expande el desktop pool (genera costo).")
   parser.add_argument("--size", type=int, required=True,
-                      help="valor 'size' enviado a la API (no confirmado si es cantidad a agregar o total)")
+                      help="valor 'size' enviado a la API (cantidad a agregar)")
   parser.add_argument("--dry-run", action="store_true", help="muestra lo que enviaría, sin expandir")
   parser.add_argument("--yes", action="store_true", help="no pide confirmación")
   args = parser.parse_args()
@@ -82,4 +86,4 @@ if __name__ == "__main__":
   try:
     main()
   except KeyboardInterrupt:
-    print("\nInterrumpido.")
+    print("\nInterrumpido. Si ya se envió la expansión, el job sigue en la nube; revísalo con monitor.py.")

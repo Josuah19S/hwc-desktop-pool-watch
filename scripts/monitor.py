@@ -1,4 +1,8 @@
-"""Observa el desktop pool en modo solo lectura y registra los cambios."""
+"""
+monitor.py
+Observa el desktop pool en modo solo lectura y registra los cambios.
+python scripts/monitor.py
+"""
 
 import argparse
 import json
